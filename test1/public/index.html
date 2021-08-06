@@ -40,4 +40,16 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
+  <script>
+    const hotkey = (e) => {
+      console.log('a')
+      let windowEvent = window.event ? event :e;
+      if (windowEvent.keyCode === 191 && windowEvent.ctrlKey ){
+        document.querySelector('input').focus();
+      }
+    }
+
+    document.onkeydown=hotkey;
+  </script>
 </html>
