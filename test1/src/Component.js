@@ -6,9 +6,9 @@ function Searchresults({ result }) {
 
             <table >
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
+                    <th>index</th>
+                    <th>Place Name</th>
+                    <th>flag</th>
                 </tr>
 
 
@@ -19,11 +19,11 @@ function Searchresults({ result }) {
                     console.log(url);
                     return (
                         <tr>
-                            <td>{index}</td>
+                            <td>{index+1}</td>
                             <td>{item.PlaceName}</td>
                             <td>
-                                <img src={url} alt="No result found" />
-                                {item.CountryName}</td>
+                                <img src={url} alt="No result found" />  
+                                {"  "+item.CountryName}</td>
                         </tr>
                     )
                 })}

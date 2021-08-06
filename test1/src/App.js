@@ -44,7 +44,7 @@ function App() {
       {(data.length > 0) ?
         <center><Searchresults result={data} /></center>
         :
-        ('enter data')
+        ('enter Search Places')
       }
     </div>
   );
