@@ -5,15 +5,14 @@ import axios from 'axios';
 import Searchresults from './Component';
 function App() {
 
-  // const [Search, setSearch] = useState('');
+  const [loading, setloading] = useState(false);
   const [data, setdata] = useState([]);
 
 
   var SearchPlaces = (e) => {
+    setloading(true)
     if (e.key === 'Enter') {
       console.log('enter ');
-
-      
 
       var options = {
         method: 'GET',
@@ -27,26 +26,31 @@ function App() {
 
       axios.request(options).then(function (response) {
 
-        console.log(response.data.Places);
-        setdata(response.data.Places);
-
+        console.log(response.data);
+        if (response.data.Places.length === 0) {
+          setdata(['No result found']);
+        } else {
+          setdata(response.data.Places);
+        }
       }).catch(function (error) {
         console.error(error);
       });
     }
+    setloading(false)
+
   }
 
   return (
     <div className="App">
       <br />
-      <input onKeyDown={SearchPlaces} />
+      <input onKeyDown={SearchPlaces} placeholder='Search Places' ></input>
       <br />
       <br />
-
-      {(data.length > 0) ?
-        <center><Searchresults result={data} /></center>
-        :
-        ('enter Search Places')
+      {loading ? (console.log('data is loading')) :
+        (data.length > 0) ?
+          <center><Searchresults result={data} /></center>
+          :
+          ('enter Search Places in search box shortcut:ctrl+/')
       }
     </div>
   );

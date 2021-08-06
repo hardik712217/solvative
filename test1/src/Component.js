@@ -13,12 +13,14 @@ function Searchresults({ result }) {
 
 
 
-                {result.map((item, index) => {
+                {
+                result[0]=='No result found'?(<tr>No result found</tr>):
+                result.map((item, index) => {
 
                     let url = "https://www.countryflags.io/" + item.CountryId.slice(0, 2) + "/flat/16.png"
                     console.log(url);
                     return (
-                        <tr>
+                        <tr key={item.CityId}>
                             <td>{index+1}</td>
                             <td>{item.PlaceName}</td>
                             <td>
