@@ -1,5 +1,11 @@
+input{
+  width:241px;
+  height:38px;
+}
 
-
+td th{
+  padding:8px;
+}
 
 .App {
   text-align: center;

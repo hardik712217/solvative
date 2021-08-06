@@ -13,7 +13,7 @@ function App() {
     if (e.key === 'Enter') {
       console.log('enter ');
 
-      var data = {}
+      
 
       var options = {
         method: 'GET',
@@ -38,7 +38,9 @@ function App() {
 
   return (
     <div className="App">
+      <br />
       <input onKeyDown={SearchPlaces} />
+      <br />
       <br />
 
       {(data.length > 0) ?
