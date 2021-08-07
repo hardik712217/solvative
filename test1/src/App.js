@@ -19,7 +19,7 @@ function App() {
         url: 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/',
         params: { query: e.target.value },
         headers: {
-          'x-rapidapi-key': '4ac5e3352fmshe6ac515ca3b8ccap1f0045jsnf0a504a87bbe',
+          'x-rapidapi-key': process.env.REACT_APP_xrapidapikey,
           'x-rapidapi-host': 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com'
         }
       };
